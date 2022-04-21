@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 导入约束之后，即可在此处装配bean了 -->
+<!--	<bean id="person" class="org.springframework.test.domain.Person" >-->
+<!--		<property name="name" value="houww"></property>-->
+<!--	</bean>-->
+
+
+<!--	<bean id="getBeanTest" class="org.springframework.test.domain.GetBeanTest" >-->
+<!--		<lookup-method name="getBean" bean="teacher"/>-->
+<!--	</bean>-->
+<!--	<bean id="teacher" class="org.springframework.test.domain.Teacher" />-->
+<!--	<bean id="student" class="org.springframework.test.domain.Student" />-->
+	<bean id="testChangeMethod" class="org.springframework.test.domain.TestChangeMethod">
+		<replaced-method name="changeMe" replacer="testMethodReplacer" />
+	</bean>
+	<bean id="testMethodReplacer" class="org.springframework.test.domain.TestMethodReplacer"/>
+</beans>

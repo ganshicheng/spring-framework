@@ -448,9 +448,11 @@ public class BeanDefinitionParserDelegate {
 						// if the generator returned the class name plus a suffix.
 						// This is expected for Spring 1.2/2.0 backwards compatibility.
 						String beanClassName = beanDefinition.getBeanClassName();
-						if (beanClassName != null &&
-								beanName.startsWith(beanClassName) && beanName.length() > beanClassName.length() &&
-								!this.readerContext.getRegistry().isBeanNameInUse(beanClassName)) {
+						if (beanClassName != null
+								&& beanName.startsWith(beanClassName)
+								&& beanName.length() > beanClassName.length()
+								&& !this.readerContext.getRegistry().isBeanNameInUse(beanClassName)
+						) {
 							aliases.add(beanClassName);
 						}
 					}
